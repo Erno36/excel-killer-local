@@ -1,0 +1,84 @@
+# Entorno local y secretos
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+*.p12
+*.pfx
+
+# Base de datos y auditoría
+cruzador.db
+cruzador.db-*
+*.sqlite
+*.sqlite3
+*.sqlite-journal
+*.sqlite-shm
+*.sqlite-wal
+.logs/
+*.jsonl
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.coverage
+.coverage.*
+htmlcov/
+*.egg-info/
+dist/
+build/
+Output/
+*.exe
+*.msi
+*.zip
+*.tar.gz
+.venv/
+.venv*/
+venv/
+env/
+.tox/
+.nox/
+
+# Datos locales, importaciones y resultados
+# Los archivos de desarrollo pueden contener datos reales o personales.
+dev_data/
+data-dev*/
+*.xlsx
+*.xls
+*.xlsm
+*.csv
+exports/
+output/
+salidas/
+upload_tmp/
+tmp/
+
+# Recetas locales
+# Conservar esta línea solo si las recetas se consideran configuración compartida.
+# recipes/
+
+# Docker e IDE
+docker-compose.override.yml
+.vscode/
+.idea/
+*.iml
+
+# Configuración privada del entorno
+.claude/
+
+# Archivos temporales y sistema operativo
+*.bak
+*.tmp
+*.temp
+*~
+*.log
+*.pid
+*.swp
+*.swo
+.DS_Store
+Thumbs.db
+Desktop.ini

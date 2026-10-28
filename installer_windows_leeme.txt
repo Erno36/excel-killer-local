@@ -1,0 +1,12 @@
+CRUZADOR EXCEL - VERSION DE DEMOSTRACION
+
+Para abrir el programa, use el acceso directo del menu Inicio o del escritorio.
+
+Usuario: dev
+Contrasena: dev1234
+
+Esta version es exclusivamente para demostraciones con datos sinteticos.
+No cargue informacion real, personal ni de clientes.
+
+La base de usuarios y los logs se guardan en la carpeta local de datos de su
+usuario de Windows. Al desinstalar el programa, esos datos se conservan.

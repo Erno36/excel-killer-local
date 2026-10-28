@@ -1,0 +1,92 @@
+{
+  "recipe_id": "c5be9baf-1389-4b68-b663-3496d31ea2b6",
+  "name": "xd",
+  "description": "",
+  "created_at": "2026-10-27T00:35:19.896801+00:00",
+  "updated_at": "2026-10-27T00:35:19.896801+00:00",
+  "version": "1.0",
+  "file_specs": [
+    {
+      "label": "anses",
+      "description": "",
+      "expected_columns": [
+        "CUIL",
+        "APELLIDO Y NOMBRE",
+        "fecha_falle",
+        "Fallecido dia mes año",
+        "Fecha archivo",
+        "Estado"
+      ]
+    },
+    {
+      "label": "renaper",
+      "description": "",
+      "expected_columns": [
+        "CUIL",
+        "NOMBRE Y APELLIDO",
+        "FECHA FALLECIMIENTO",
+        "FECHA INFORMADO",
+        "OCURRENCIA"
+      ]
+    },
+    {
+      "label": "seguros",
+      "description": "",
+      "expected_columns": [
+        "CUIL",
+        "nombre_producto",
+        "estado",
+        "broker",
+        "importe_prima"
+      ]
+    }
+  ],
+  "cleansing_rules": [
+    {
+      "rule_id": "5ef1d930-7818-439a-a1cd-808b751bfae3",
+      "file_label": "anses",
+      "column": "CUIL",
+      "operation": "keep_only_digits",
+      "params": {}
+    },
+    {
+      "rule_id": "1a5be263-da7c-4ebc-958b-6998e095dbad",
+      "file_label": "renaper",
+      "column": "CUIL",
+      "operation": "keep_only_digits",
+      "params": {}
+    },
+    {
+      "rule_id": "cb0b7b42-a362-4b8a-b1ba-2c4734ec9ab9",
+      "file_label": "seguros",
+      "column": "CUIL",
+      "operation": "keep_only_digits",
+      "params": {}
+    }
+  ],
+  "join_type": "outer",
+  "normalize_keys": true,
+  "cross_steps": [
+    {
+      "left_label": "anses",
+      "right_label": "renaper",
+      "key_pairs": [
+        [
+          "CUIL",
+          "CUIL"
+        ]
+      ]
+    },
+    {
+      "left_label": "renaper",
+      "right_label": "seguros",
+      "key_pairs": [
+        [
+          "CUIL",
+          "CUIL"
+        ]
+      ]
+    }
+  ],
+  "business_rules": []
+}

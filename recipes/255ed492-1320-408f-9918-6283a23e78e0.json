@@ -1,0 +1,68 @@
+{
+  "recipe_id": "255ed492-1320-408f-9918-6283a23e78e0",
+  "name": "cuilyfechas",
+  "description": "",
+  "created_at": "2026-10-27T13:06:22.753810+00:00",
+  "updated_at": "2026-10-27T13:06:22.753810+00:00",
+  "version": "1.0",
+  "file_specs": [
+    {
+      "label": "anses",
+      "description": "",
+      "expected_columns": [
+        "CUIL",
+        "APELLIDO Y NOMBRE",
+        "fecha_falle",
+        "Fallecido dia mes año",
+        "Fecha archivo",
+        "Estado"
+      ]
+    },
+    {
+      "label": "renaper",
+      "description": "",
+      "expected_columns": [
+        "CUIL",
+        "NOMBRE Y APELLIDO",
+        "FECHA FALLECIMIENTO",
+        "FECHA INFORMADO",
+        "OCURRENCIA"
+      ]
+    }
+  ],
+  "cleansing_rules": [
+    {
+      "rule_id": "17b7108d-7b91-4051-b9ae-a44bb9beab82",
+      "file_label": "anses",
+      "column": "CUIL",
+      "operation": "keep_only_digits",
+      "params": {}
+    },
+    {
+      "rule_id": "6c955cb9-7ce7-416e-a434-09a80bd4945a",
+      "file_label": "anses",
+      "column": "CUIL",
+      "operation": "keep_only_digits",
+      "params": {}
+    }
+  ],
+  "join_type": "outer",
+  "normalize_keys": true,
+  "cross_steps": [
+    {
+      "left_label": "anses",
+      "right_label": "renaper",
+      "key_pairs": [
+        [
+          "CUIL",
+          "CUIL"
+        ],
+        [
+          "fecha_falle",
+          "FECHA FALLECIMIENTO"
+        ]
+      ]
+    }
+  ],
+  "business_rules": []
+}
